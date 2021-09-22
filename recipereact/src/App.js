@@ -1,4 +1,4 @@
-
+import React,{useEffect} from 'react'
 import './App.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   },[])
 
   const getRecipe = async ()=>{
-    const response = await  fetch(`https://api.edamam.com/api/recipes/v2/0123456789abcdef0123456789abcdef?app_id=${APP_ID}D&app_key=${APP_KEY}&type=public`);
+    const response = await  fetch(`https://api.edamam.com/search?q=chicken&app_id=${APP_ID}&app_key=${APP_KEY}`)
     const data = await response.json();
     console.log(data);
   }
